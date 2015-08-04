@@ -29,11 +29,11 @@ var ParsePushPlugin = {
 		 
 	 },
 	 
-    register: function(regParams, successCb, errorCb) {
+    initialize: function(regParams, successCb, errorCb) {
        var params = _.extend({ecb: serviceName + '._onNotify'}, regParams || {});
    	 this._eventKey = params.eventKey || null;
    	 
-       cordova.exec(successCb, errorCb, serviceName, 'register', [params]);
+       cordova.exec(successCb, errorCb, serviceName, 'initialize', [params]);
     },
 
     getInstallationId: function(successCb, errorCb) {
